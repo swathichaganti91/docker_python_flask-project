@@ -66,11 +66,13 @@ jobs:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_967B9D59FE3849C39B8FAFDF04BF2522 }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_007DAEF2ECC64D1492E2D38A85DD5063 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_5C44E2FADD5E4756A49C452FFA54E76F }}
-
+          client-secret: ${{ secrets.AZUREAPPSERVICE_CLIENTSECRET_967B9D59FE3849C39B8FAFDF04BF2522 }}
+          
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
           app-name: 'bls'
           slot-name: 'Production'
+
           
